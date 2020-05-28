@@ -4,7 +4,7 @@ import com.cybertek.pages.LoginPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class LoginTestSami extends TestBase {
+public class LoginTestNegative extends TestBase {
 
     @Test
     public  void loginTest1(){
