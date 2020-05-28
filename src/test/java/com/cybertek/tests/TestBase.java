@@ -52,7 +52,7 @@ public class TestBase {
             report.setSystemInfo("Environment", "QA-"+ConfigurationReader.get("url"));
             report.setSystemInfo("Browser", ConfigurationReader.get("browser"));
             report.setSystemInfo("OS",System.getProperty("os.name"));
-            report.setSystemInfo("Tester Group","6");
+            report.setSystemInfo("Tester","Group-6");
     }
 
     @BeforeMethod
