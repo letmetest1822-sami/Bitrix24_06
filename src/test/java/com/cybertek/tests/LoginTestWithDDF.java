@@ -11,7 +11,8 @@ public class LoginTestWithDDF extends TestBase {
 
     @DataProvider
     public Object[][] userData(){
-        ExcelUtil credentials = new ExcelUtil("src\\test\\resources\\_NextBaseCRDM_USs_credentials_27052020.xlsx","Credentials-G6");
+        ExcelUtil credentials = new ExcelUtil("src\\test\\resources\\_NextBaseCRDM_USs_credentials_27052020.xlsx",
+                "Credentials-G6");
 
         String [][] dataArray = credentials.getDataArrayWithoutFirstRow();
 
