@@ -13,6 +13,7 @@ import org.testng.annotations.Test;
                    2-Click the Event module
                    3-Verify to see Event page
                  */
+
                 @Test
                 public void eventTest(){
                     extentLogger=report.createTest("Event Page");
