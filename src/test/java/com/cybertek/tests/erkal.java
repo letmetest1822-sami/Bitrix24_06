@@ -20,10 +20,12 @@ import org.testng.annotations.Test;
                     extentLogger.info("Username:"+ ConfigurationReader.get("hr1_username"));
                     extentLogger.info("Password:"+"******");
                     loginPage.loginAsHR1();
+
                     new DashboardPage().navigateToModule("Activity Stream","Event");
                     EventPage eventP=new EventPage();
                     eventP.eventPage.click();
-                    String expectedPage="EVENT_NAME";
+
+                    String expectedPage="EVENT";
                     String actualPage=eventP.eventPage.getText();
                     Assert.assertEquals(actualPage,expectedPage,"verify is Ok");
                     extentLogger.pass("Pass:");
