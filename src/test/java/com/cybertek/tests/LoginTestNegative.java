@@ -14,7 +14,7 @@ public class LoginTestNegative extends TestBase {
         extentLogger.info("Enter Username : helpdesk11@cybertekschool.com");
 
         loginPage.passwordInput.sendKeys("something");
-        extentLogger.info("Enter password : UserUser");
+        extentLogger.info("Enter password : somepassword");
 
         loginPage.loginBtn.click();
         extentLogger.info("Click login button");
