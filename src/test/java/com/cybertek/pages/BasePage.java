@@ -13,9 +13,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public abstract class BasePage {
 
-    @FindBy(xpath = "//span[.='Announcement']")
-    public WebElement announcementBtn;
-
     @FindBy(css = "div[class='loader-mask shown']")
     @CacheLookup
     protected WebElement loaderMask;
@@ -99,8 +96,8 @@ public abstract class BasePage {
      * @param module
      */
     public void navigateToModule(String tab, String module) {
-        String tabLocator = "//span[normalize-space()='" + tab + "' and contains(@class, 'menu-item-link-text')]";
-        String moduleLocator = "//span[normalize-space()='" + module + "' and contains(@class, 'feed-add-post-form-link')]";
+        String tabLocator = "//span[normalize-space()='" + tab + "' and contains(@class, 'title title-level-1')]";
+        String moduleLocator = "//span[normalize-space()='" + module + "' and contains(@class, 'title title-level-2')]";
         try {
             BrowserUtils.waitForClickablility(By.xpath(tabLocator), 5);
             WebElement tabElement = Driver.get().findElement(By.xpath(tabLocator));

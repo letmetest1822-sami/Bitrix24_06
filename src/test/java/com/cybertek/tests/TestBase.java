@@ -97,7 +97,7 @@ public class TestBase {
         }
         //close driver
         Thread.sleep(2000);
-        //Driver.closeDriver();
+        Driver.closeDriver();
     }
 
     @AfterTest
