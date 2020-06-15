@@ -1,8 +1,10 @@
 package com.cybertek.tests;
 
 import com.cybertek.pages.ActivityStreamPage;
+import com.cybertek.pages.AnnouncementPage;
 import com.cybertek.pages.DashboardPage;
 import com.cybertek.pages.LoginPage;
+import com.cybertek.utilities.BrowserUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -34,15 +36,11 @@ public class hiltas73 extends TestBase{
             DashboardPage dashboardPage = new DashboardPage();
             dashboardPage.navigateToModule("Activity Stream", "More");
 
-            //Actions actions = new Actions(driver);
-            //JavascriptExecutor jse = (JavascriptExecutor) driver;
-
-            String expectedResult = "show announcement:";
-
             new ActivityStreamPage().announcementBtn.click();
+            //BrowserUtils.verifyElementDisplayed(new AnnouncementPage().showAnnouncementText);
+            BrowserUtils.waitFor(2);
 
-
-            //Assert.assertEquals(actualResult.getText(), expectedResult,"Verify to see Announcement module page");
-            //Assert.assertTrue(actualResult.isDisplayed(),"Verify to see Announcement module page");
+            Assert.assertTrue(new AnnouncementPage().showAnnouncementText.isDisplayed(),"Verify to see Announcement module page");
+            extentLogger.pass("PASS : Access Announcement Module Test");
         }
 }
