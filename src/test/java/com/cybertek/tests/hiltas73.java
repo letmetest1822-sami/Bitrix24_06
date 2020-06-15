@@ -34,24 +34,21 @@ public class hiltas73 {
      */
         @Test
         public void test1() throws InterruptedException {
-            driver.get("https://login.nextbasecrm.com");
-            driver.manage().window().maximize();
-            driver.findElement(By.name("USER_LOGIN")).sendKeys("hr11@cybertekschool.com");
-            driver.findElement(By.name("USER_PASSWORD")).sendKeys("UserUser"+ Keys.ENTER);
+            public void test1() throws InterruptedException {
+            extentLogger = report.createTest("Access Announcement Module Test");
 
-            driver.findElement(By.id("feed-add-post-form-link-text")).click();
-            Thread.sleep(3000);
+            extentLogger = report.createTest("Login as hr11@cybertekschool.com");
+            LoginPage loginPage = new LoginPage();
+            loginPage.login("hr11@cybertekschool.com","UserUser");
 
-            //Actions actions = new Actions(driver);
-            //JavascriptExecutor jse = (JavascriptExecutor) driver;
+            DashboardPage dashboardPage = new DashboardPage();
+            dashboardPage.navigateToModule("Activity Stream", "More");
 
-            String expectedResult = "show announcement:";
+            new ActivityStreamPage().announcementBtn.click();
+            //BrowserUtils.verifyElementDisplayed(new AnnouncementPage().showAnnouncementText);
+            BrowserUtils.waitFor(2);
 
-            WebElement announceBtn = driver.findElement(By.xpath("//span[.='Announcement']"));
-            announceBtn.click();
-
-
-            //  Assert.assertEquals(actualResult.getText(), expectedResult,"Verify to see Announcement module page");
-            //  Assert.assertTrue(actualResult.isDisplayed(),"Verify to see Announcement module page");
+            Assert.assertTrue(new AnnouncementPage().showAnnouncementText.isDisplayed(),"Verify to see Announcement module page");
+            extentLogger.pass("PASS : Access Announcement Module Test");
         }
 }
