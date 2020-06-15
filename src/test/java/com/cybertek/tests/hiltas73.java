@@ -1,40 +1,32 @@
 package com.cybertek.tests;
 
+import com.cybertek.pages.ActivityStreamPage;
+import com.cybertek.pages.AnnouncementPage;
+import com.cybertek.pages.DashboardPage;
+import com.cybertek.pages.LoginPage;
+import com.cybertek.utilities.BrowserUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class hiltas73 {
+public class hiltas73 extends TestBase{
 
-
-        WebDriver driver;
-
-        @BeforeMethod
-        public void setUpMethod() {
-
-            driver = com.cybertek.utilities.WebDriverFactory.getDriver("chrome");
-        }
-
-        @AfterMethod
-        public void afterMethod() throws InterruptedException {
-            Thread.sleep(3000);
-            driver.quit();
-        }
 
     /*
+    AC1: User should be able to see Announcement module under More tab
     1.Hover Over to More Tab
     2.Click on More
     3.Click on Announcement module
     4.Verify to see Announcement module page
 
      */
-        @Test
+        @Test(description = "Access Announcement Module Test")
         public void test1() throws InterruptedException {
-            public void test1() throws InterruptedException {
             extentLogger = report.createTest("Access Announcement Module Test");
 
             extentLogger = report.createTest("Login as hr11@cybertekschool.com");

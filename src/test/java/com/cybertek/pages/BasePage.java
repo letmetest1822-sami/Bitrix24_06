@@ -32,10 +32,6 @@ public abstract class BasePage {
     @FindBy(linkText = "My User")
     public WebElement myUser;
 
-
-
-
-
     public BasePage() {
         PageFactory.initElements(Driver.get(), this);
     }
